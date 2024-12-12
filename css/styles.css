@@ -1,0 +1,1359 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+/* Algemene stijl */
+
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #0d1117; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    height: 100%;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+  
+}
+
+a {
+    color: #6dd0ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #ff6ac1; /* Roze accent bij hover */
+}
+ img{
+    background-size: cover;
+    height:20em;
+ }
+/* Navigatie */
+header {
+    background: rgba(13, 17, 23, 0.7); /* Semi-transparant voor een subtiele look */
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #2a2f38;
+    backdrop-filter: blur(10px);  /* Dit zorgt voor de blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Voor ondersteuning in Safari */
+}
+
+/* Nav styling */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;  /* Zorg ervoor dat de achtergrond van de nav zelf transparant is */
+    z-index: 10;
+}
+
+header nav a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 2rem;
+}
+
+header nav ul li a {
+    color: #6dd0ff;
+    text-decoration: none;
+    font-size:larger;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none; /* Verborgen op grotere schermen */
+    cursor: pointer;
+}
+
+.hamburger svg {
+    width: 30px;
+    height: 30px;
+    stroke: #fff;
+}
+
+/* Fullscreen menu styling */
+nav.active ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0d1117;
+    justify-content: center;
+    z-index: 999;
+}
+
+nav.active ul li {
+    margin: 1rem 0;
+}
+
+nav.active ul li a {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav.active ul li a:hover {
+    color: #ff6ac1; /* Roze accent bij hover */
+}
+
+/* Responsief ontwerp voor kleinere schermen */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Verbergen op kleine schermen */
+    }
+
+    .hamburger {
+        display: block; /* Weergeven op kleine schermen */
+    }
+}
+
+/* Stijlen voor de Home-pagina */
+.home section:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: radial-gradient(circle, #121212, #0d1117 70%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.home section:first-of-type h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #6dd0ff, #a18eff);
+    -webkit-background-clip: text;
+    color: transparent; /* Neon text-effect */
+    animation: fadeIn 1s ease-in-out;
+    padding-top: 3em;
+}
+
+.home section:first-of-type p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #cfcfcf;
+}
+
+
+
+.home section:first-of-type a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #ff6ac1, #6dd0ff);
+    color: #121212;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, 0.3s ease;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.home section:first-of-type a:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(to right, #387eff, #a18eff);
+}
+
+/* Over Mij Sectie */
+.home section:nth-of-type(2) {
+    padding: 4rem 2rem;
+    background: #0d1117;
+    text-align: left;
+}
+
+.home section:nth-of-type(2) h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #6dd0ff;
+    background: linear-gradient(to right, #6dd0ff, #ff6ac1);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeInUp 1s ease-out;
+    margin-left: 0.2em;
+}
+
+.home section:nth-of-type(2) p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #cfcfcf;
+    margin: 0 1rem;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.home section:nth-of-type(2) p:last-of-type {
+    margin-top: 1rem;
+}
+
+
+
+/* Overige stijlen blijven zoals jouw originele CSS */
+/* Projecten Sectie */
+.home section:nth-of-type(3) {
+    padding: 4rem 2rem;
+    background: #0d1117;
+    text-align: center;
+    color: #ffffff;
+}
+
+.home section:nth-of-type(3) h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #6dd0ff;
+    background: linear-gradient(to right, #6dd0ff, #ff6ac1);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.home section:nth-of-type(3) div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.home section:nth-of-type(3) article {
+    background: linear-gradient(145deg, #1a1d26, #121212);
+    border: 1px solid #333;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.home section:nth-of-type(3) article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+.home section:nth-of-type(3) article img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.home section:nth-of-type(3) article img:hover {
+    transform: scale(1.05);
+}
+
+.home section:nth-of-type(3) article h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    background: linear-gradient(to right, #6dd0ff, #ff6ac1);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.home section:nth-of-type(3) article p {
+    font-size: 1rem;
+    margin: 0 1rem 1.5rem;
+    color: #cfcfcf;
+    line-height: 1.4;
+}
+
+.home section:nth-of-type(3) article a {
+    display: inline-block;
+    margin: 0 1rem 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #387eff, #a18eff);
+    color: #121212;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease,0.3s ease, box-shadow 0.3s ease;
+}
+
+.home section:nth-of-type(3) article a:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(to right, #6dd0ff, #ff6ac1);
+    color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Vaardigheden Sectie */
+/* Vaardigheden Sectie */
+.home section:nth-of-type(4) {
+    background: #0a0a0a; /* Donkere achtergrond voor een ruimte-achtige sfeer */
+    padding: 4rem 2rem;  /* Meer ruimte rondom de sectie */
+    text-align: center;
+}
+
+.home section:nth-of-type(4) h2 {
+    font-size: 2.5rem;
+    color: #6dd0ff;
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+    background: linear-gradient(to right, #6dd0ff, #a18eff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.home section:nth-of-type(4) ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexibele grid voor verschillende schermgroottes */
+    gap: 2rem;
+    padding: 0;
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.home section:nth-of-type(4) ul li {
+    background: #121212;
+    padding: 2rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 220px; /* Geeft ruimte voor tekst en maakt de items groter */
+}
+
+.home section:nth-of-type(4) ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+.home section:nth-of-type(4) ul li svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.home section:nth-of-type(4) ul li:hover svg {
+    transform: scale(1.2);  /* Vergroot het icoon bij hover */
+}
+
+.home section:nth-of-type(4) ul li p {
+    font-size: 1rem;
+    color: #cfcfcf;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+.home section:nth-of-type(4) ul li:hover p {
+    color: #ff6ac1;  /* Verander de tekstkleur bij hover */
+}
+/* Contact Sectie */
+/* Stijl voor de iconen */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-icon {
+    display: inline-block;
+    background-color: #121212;
+    padding: 1.2rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.contact-icon svg {
+    width: 36px;
+    height: 36px;
+    fill: #6dd0ff;
+    transition: fill 0.3s ease;
+}
+
+.contact-icon:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.contact-icon:hover svg {
+    fill: #ff6ac1;
+}
+
+
+/* Animatie */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #1f1f1f;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    margin: 0;
+    color: #cfcfcf;
+    font-size: 0.9rem;
+}
+
+
+
+/* Styling voor de intro sectie */
+.intro {
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #6dd0ff;
+  background: linear-gradient(to right, #6dd0ff, #ff6ac1);
+    background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: fadeInUp 1s ease-out;
+}
+
+.intro p {
+    color: #D1D1D1;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.scroll-btn {
+    display: inline-block;
+    background-color: #A7A7FF;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 100px;
+    font-weight:bolder;
+    transition: transform 0.3s ease;
+}
+
+.scroll-btn:hover {
+    transform: translateY(-5px);
+}
+
+/* Foto-sectie */
+.photo-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 6rem 2rem;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 30px rgba(255, 255, 255, 0.1);
+}
+
+.text-left {
+    flex: 1;
+    text-align: left;
+}
+.text-left a{
+        display: inline-block;
+        margin-top: 1rem;
+        background-color: #ff6ac1;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        color: #121212;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s ease, transform 0.3s ease;
+}
+
+.text-left a:hover{
+    background-color: #6dd0ff;
+}
+
+.text-left h2 {
+    color: #A7A7FF;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.image-right img {
+    max-width: 100%;
+    border-radius: 50%; /* Dit maakt de afbeelding rond */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Schaduw om het zwevende effect te versterken */
+    animation: float 3s ease-in-out infinite; /* De zwevende animatie */
+}
+
+/* Animatie voor het zweven van de afbeelding */
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Beginpositie */
+    }
+    50% {
+        transform: translateY(-10px); /* Beweeg omhoog */
+    }
+    100% {
+        transform: translateY(0); /* Terug naar de beginpositie */
+    }
+}
+/* Algemene styling voor de skill sectie */
+.skills-section {
+    padding: 2rem;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+
+.skill {
+    margin-bottom: 2rem;
+}
+
+.skill h3 {
+    width: 100%; /* Vul de kolom volledig */
+    text-align: center;
+}
+
+/* Algemene styling voor de skill sectie */
+.skills-section {
+    padding: 2rem;
+    background-color: #121212;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Twee kolommen */
+    gap: 2rem;
+    text-align: center;
+    justify-items: center;
+}
+
+/* Styling voor elke skill */
+.skill {
+    width: 200px; /* Brede kolom voor elke skill */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.skill h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #6dd0ff;
+}
+
+/* Styling van de voortgangsbalk */
+.progress-bar {
+    width: 100%;
+    height: 12px; /* Kleinere hoogte voor de balken */
+    background-color: #444;
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* Specifieke kleuren en percentages voor elke skill */
+.skills-section .progress.photoshop {
+    width: 60%;
+    background: linear-gradient(to right, #9b59b6, #8e44ad); /* Paars voor Photoshop */
+}
+
+.skills-section .progress.illustrator {
+    width: 70%;
+    background: linear-gradient(to right, #3498db, #2980b9); /* Blauw voor Illustrator */
+}
+
+.skills-section .progress.indesign {
+    width: 30%;
+    background: linear-gradient(to right, #8e44ad, #9b59b6); /* Lila voor InDesign */
+}
+
+.skills-section .progress.xd {
+    width: 75%;
+    background: linear-gradient(to right, #6a1b9a, #ab47bc); /* Donkerpaars voor XD */
+}
+
+.skills-section .progress.after-effects {
+    width: 30%;
+    background: linear-gradient(to right, #34495e, #2c3e50); /* Blauwgrijs voor After Effects */
+}
+
+.skills-section .progress.figma {
+    width: 85%;
+    background: linear-gradient(to right, #00d7e0, #1e88e5); /* Blauwgroen voor Figma */
+}
+
+.skills-section .progress.sketch {
+    width: 50%;
+    background: linear-gradient(to right, #ff4081, #e91e63); /* Roze voor Sketch */
+}
+
+.skills-section .progress.lightroom {
+    width: 70%;
+    background: linear-gradient(to right, #9c27b0, #8e24aa); /* Paars-roze voor Lightroom */
+}
+
+/* Percentage styling */
+.percentage {
+    font-size: 1.1rem;
+    color: #6dd0ff;
+}
+
+/* Media query voor kleinere schermen */
+@media screen and (max-width: 768px) {
+    .skills-section {
+        justify-content: center; /* Centraal uitlijnen op kleinere schermen */
+    }
+
+    .skill {
+        width: 150px; /* Kleinere kolommen op kleinere schermen */
+    }
+}
+
+
+/* Algemene stijl voor de sectie */
+.vaardigheden-sectie {
+    background: #1e1e1e; 
+    padding: 5rem 2rem;
+    color: #fff;
+    box-shadow: inset 0px 0px 30px rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #333; /* Bento box randje */
+}
+
+/* Animatie voor de achtergrond */
+@keyframes moveBg {
+    0% { background-position: 0 0; }
+    100% { background-position: 200% 200%; }
+}
+
+.vaardigheden-sectie {
+    animation: moveBg 20s linear infinite;
+    background: linear-gradient(45deg, #080808, #232323, #4b4b4b);
+    background-size: 400% 400%;
+    background-image: url('path-to-stars-image.jpg'); /* Ruimte-achtige achtergrond, met sterren of nevelen */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* De container voor de inhoud */
+.vaardigheden-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+/* Stijl voor elk artikel (Bento Box stijl) */
+.vaardigheden-content article {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    width: calc(50% - 2rem);
+    margin-bottom: 2rem;
+    position: relative;
+    border: 1px solid #333; /* Bento box rand voor de vakken */
+}
+
+.vaardigheden-content article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Titel van de artikelen */
+.vaardigheden-content article h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: linear-gradient(to right, #6dd0ff, #a18eff);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Glowing text effect */
+}
+
+/* Lijst items stijl */
+.vaardigheden-content article ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.vaardigheden-content article ul li {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    position: relative;
+    transition: 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect voor de lijstitems */
+.vaardigheden-content article ul li:hover {
+    background: rgba(0, 0, 0, 0.7);
+    color: #bb86fc;
+}
+
+/* Animatie voor de lijstitems */
+.vaardigheden-content article ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.vaardigheden-content article ul li:hover::before {
+    opacity: 1;
+}
+
+
+/* Mobile responsiviteit */
+@media (max-width: 768px) {
+    .photo-section {
+        flex-direction: column;
+    }
+
+    .skills-section {
+        grid-template-columns: 1fr;
+    }
+
+    .vaardigheden-content article {
+        width: calc(100% - 2rem);
+    }
+}
+
+
+/* Responsive aanpassingen */
+@media (max-width: 768px) {
+    .vaardigheden-content article {
+        width: calc(100% - 2rem); /* Zorg ervoor dat artikelen 100% breed zijn op kleine schermen */
+    }
+}
+
+ /* einde  /*
+
+/* Hoofd koppen in de vaardigheden sectie */
+body.vaardigheden h1, 
+body.vaardigheden h2, 
+body.vaardigheden h3 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Koppelingen (links) */
+body.vaardigheden a {
+    color: #6dd0ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.vaardigheden a:hover {
+    color: #ff6ac1; /* Roze accent bij hover */
+}
+
+/* Hoofd sectie */
+body.vaardigheden main {
+    padding: 100px 2rem 2rem;
+    background-color: #121212; /* Donkere achtergrond voor de content */
+    min-height: 100vh; /* Zorg ervoor dat de hoofdsectie tenminste de hoogte van het scherm heeft */
+}
+
+/* Titel van de vaardigheden sectie */
+body.vaardigheden h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Paragraaf in de vaardigheden sectie */
+body.vaardigheden article p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #cfcfcf;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Secties binnen de vaardigheden pagina */
+body.vaardigheden section {
+    margin-bottom: 2rem;
+}
+
+/* Titels van de secties */
+body.vaardigheden section h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Lijst in de secties */
+body.vaardigheden section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+body.vaardigheden section ul li {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+body.vaardigheden section ul li:hover {
+    background: linear-gradient(to right, #6dd0ff, #ff6ac1);
+    color: #121212;
+    transform: translateY(-5px);
+}
+
+
+/* Contact secties */
+
+/* Contact secties */
+body.contactformulier main {
+    margin-top: 120px; /* Ruimte voor de header */
+    padding: 2rem;
+    max-width: 800px; /* Beperk de breedte van de main sectie */
+    margin-left: auto;
+    margin-right: auto; /* Centreer de inhoud */
+}
+
+/* Specifieke vertraging voor animaties van secties */
+body.contactformulier section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-out forwards;
+    margin-bottom: 2rem; /* Ruimte tussen secties */
+}
+
+body.contactformulier section:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+body.contactformulier section:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+body.contactformulier section:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Contactformulier styling */
+body.contactformulier .contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+body.contactformulier .contact-form input,
+body.contactformulier .contact-form textarea {
+    background-color: #2a2f38;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-size: 1rem; /* Kleinere tekst */
+}
+
+body.contactformulier .contact-form button {
+    background-color: #6dd0ff;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem; /* Kleinere button tekst */
+    width: 100%; /* Maak de button full-width */
+}
+
+body.contactformulier .contact-form button:hover {
+    background-color: #ff6ac1;
+    transform: translateY(-3px);
+}
+
+/* Sociale media styling */
+body.contactformulier .social-media ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body.contactformulier .social-media ul li {
+    margin: 1rem 0;
+}
+
+body.contactformulier .social-media ul li a {
+    color: #6dd0ff;
+    text-decoration: none;
+    font-size: 1.1rem; /* Kleinere tekst voor links */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+body.contactformulier .social-media ul li a:hover {
+    color: #ff6ac1;
+    transform: translateX(5px);
+}
+
+/* Animaties */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+
+    body.contactformulier main {
+        padding: 1rem; /* Minder padding voor kleinere schermen */
+    }
+
+    body.contactformulier .contact-form input,
+    body.contactformulier .contact-form textarea,
+    body.contactformulier .contact-form button {
+        font-size: 0.9rem; /* Kleinere tekst op kleinere schermen */
+    }
+
+    body.contactformulier .contact-form button {
+        width: 100%; /* Maak de button full-width op kleine schermen */
+    }
+}
+
+
+
+/* Responsief ontwerp voor kleinere schermen */
+@media (max-width: 768px) {
+    body.vaardigheden main {
+        padding: 2rem 1rem;
+    }
+
+    body.vaardigheden section ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
+.intro {
+    padding-top: 5em;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #cfcfcf;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.project-cards article {
+    background: linear-gradient(145deg, #1a1d26, #121212);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+    color: #fff;
+}
+
+.project-cards article img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-cards article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.project-cards article:hover img {
+    transform: scale(1.05);
+}
+
+.project-cards article h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #ff6ac1;
+    background: linear-gradient(to right, #6dd0ff, #a18eff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.project-cards article p {
+    font-size: 1rem;
+    color: #cfcfcf;
+}
+
+.project-cards article a {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #ff6ac1;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    color: #121212;
+    font-weight: 600;
+    text-decoration: none;
+    transition:  0.3s ease, transform 0.3s ease;
+}
+
+.project-cards article a:hover {
+    background-color: #6dd0ff;
+    transform: translateY(-5px);
+}
+
+
+/* Media Queries voor Responsiviteit */
+
+@media (max-width: 900px) {
+    .project-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 kaarten per rij op kleinere schermen */
+    }
+}
+
+@media (max-width: 600px) {
+    .project-cards {
+        grid-template-columns: 1fr; /* 1 kaart per rij op zeer kleine schermen */
+    }
+
+    .intro h2 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+} 
+
+
+
+
+/* Main Content Styling */
+body.boekenzoeker main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10rem 20px 15rem;
+}
+
+/* Section Styling */
+body.boekenzoeker section {
+    background: linear-gradient(145deg, #1a1d26, #121212);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    margin-bottom: 60px;
+}
+
+body.boekenzoeker section:nth-child(odd) {
+    background-color: rgba(0, 0, 30, 0.8); /* Slightly darker for odd sections */
+    
+}
+
+body.boekenzoeker section:first-of-type img{
+    height: 100%;
+    width: 100%;
+}
+
+body.boekenzoeker h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: #ff6ac1;
+    background: linear-gradient(to right, #6dd0ff, #a18eff);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+     color: transparent;
+}
+
+body.boekenzoeker img{
+    border-radius: 1%;
+}
+
+body.boekenzoeker main h3 {
+    color:white;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+body.boekenzoeker main p {
+    color: #d6d6d6;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+body.boekenzoeker  main ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+body.boekenzoeker main ul li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #d6d6d6;
+}
+
+/* Mijn Rol Lijst Styling */
+body.boekenzoeker main section:nth-of-type(4) ul li {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 30, 0.7); /* Lichte achtergrondkleur voor de lijst */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Zachte schaduw voor diepte */
+}
+
+body.boekenzoeker main section:nth-of-type(4) ul li {
+    font-size: 1.2em; /* Grotere tekst voor een strakker uiterlijk */
+    margin-bottom: 15px;
+    padding: 10px;
+    color: #d6d6d6; /* Lichte tekstkleur */
+    border-radius: 5px; /* Kleine afronding voor de lijstitems */
+    transition: all 0.3s ease-in-out; /* Vlotte overgang voor hover effect */
+    display: flex;
+    align-items: center;
+}
+
+/* Hover Effect voor Lijstitems */
+body.boekenzoeker main section:nth-of-type(4) ul li:hover {
+    background-color: #ff85c0; /* Space Pink achtergrond bij hover */
+    color: #fff; /* Maak de tekst wit als de achtergrond verandert */
+    transform: scale(1.05); /* Subtiele zoom effect voor interactie */
+}
+
+/* Icoon of bullet styling voor lijstitems (optioneel) */
+body.boekenzoeker main section:nth-of-type(4) ul li::before {
+    content: '✔'; /* Of elk ander gewenst symbool */
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: #ff85c0; /* De iconen krijgen dezelfde kleur als de hover */
+    transition: all 0.3s ease;
+}
+
+/* Effect voor de iconen bij hover */
+body.boekenzoeker main section:nth-of-type(4) ul li:hover::before {
+    color: #fff; /* Maak het icoon wit wanneer het item wordt gehoverd */
+}
+
+
+/* Links Styling */
+body.boekenzoeker main a {
+    color: #ff85c0; /* Space Pink on hover */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-right: 20px;
+}
+
+body.boekenzoeker a:hover {
+    color: #4e84e5; /* Space Blue */
+}
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Maximale breedte voor de carrousel */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* De carrousel zelf, waarin de afbeeldingen zich bevinden */
+.carousel {
+    display: flex; /* Zorg ervoor dat de afbeeldingen naast elkaar komen te staan */
+}
+
+/* Zorg ervoor dat de afbeeldingen kleiner zijn en goed worden weergegeven */
+.carousel img {
+    width: 100%; /* Maak de afbeeldingen de breedte van de container */
+    height: 100%;
+    object-fit: cover; /* Zorgt ervoor dat de afbeeldingen goed passen */
+    flex: 0 0 100%; /* Zorgt ervoor dat elke afbeelding de breedte van de container inneemt */
+}
+
+/* Knoppen voor navigatie */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+button.prev:hover, button.next:hover {
+    opacity: 1;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+
+
+/* 2 /*
+
+/* Mobiele carrousel-container */
+.mobiel-carousel-container {
+    position: relative;
+    max-width:400px;
+    max-height: 850px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 30%; /* Zorg dat de container een vaste hoogte heeft */
+
+}
+
+.mobiel-carousel .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+    
+}
+
+.mobiel-carousel .carousel img {
+    max-width: 100%; /* Specifieke maximale breedte voor mobiel */
+    max-height: 800px; /* Schaal ook de hoogte indien nodig */
+    object-fit: cover; /* Past de schaal van de afbeelding aan zonder de verhouding te verliezen */
+    flex: 0 0 auto;
+    margin: auto; /* Centraal binnen de container */
+    border-radius: 5px;
+
+    
+}
+
+.mobiel-carousel button.prev,
+.mobiel-carousel button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.mobiel-carousel button.prev:hover,
+.mobiel-carousel button.next:hover {
+    opacity: 1;
+}
+
+.mobiel-carousel button.prev {
+    left: 10px;
+}
+
+.mobiel-carousel button.next {
+    right: 10px;
+}
+
+/* Media query voor mobiele apparaten */
+@media (max-width: 600px) {
+    .carousel-container.mobiel-carousel {
+        max-width: 100%;
+    }
+
+    .carousel-container.mobiel-carousel .carousel img {
+        width: 100%;
+    }
+
+    button.prev, button.next {
+        font-size: 1.5em; /* Verklein de knoppen voor mobiele apparaten */
+    }
+}
