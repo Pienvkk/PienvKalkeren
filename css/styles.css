@@ -19,7 +19,7 @@ html, body {
 }
 
 
-body section:last-of-type{
+body.home section:last-of-type{
     margin:1em;
 }
 h1, h2, h3 {
@@ -177,6 +177,8 @@ nav.active ul li a:hover {
     .home section:first-of-type h1{
         font-size: 2em;  /* Kleinere titel op mobiele apparaten */
     }
+
+    .home se
 }
 
 /* Verkleinen van de titel op extra kleine schermen (bijv. smartphones in portretmodus) */

@@ -1,56 +1,52 @@
-// Hamburger-menu functionaliteit
+
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel img'); 
+const totalSlides = slides.length; 
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
 
-// Voeg een klik-event toe aan het hamburger-icoon
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         nav.classList.toggle('active');
     });
 }
-// Carousel functionaliteit
-let currentSlide = 0; // De huidige actieve slide
-const slides = document.querySelectorAll('.carousel img'); // Alle afbeeldingen in de carousel
-const totalSlides = slides.length; // Totaal aantal slides
 
-// Functie om de carousel te verplaatsen
+
 function moveSlide(step) {
-    // Update de huidige slide-index
+
     currentSlide += step;
 
-    // Zorg ervoor dat de index niet buiten de grenzen komt
+  
     if (currentSlide < 0) {
-        currentSlide = totalSlides - 1; // Ga naar de laatste afbeelding
+        currentSlide = totalSlides - 1; 
     } else if (currentSlide >= totalSlides) {
-        currentSlide = 0; // Ga terug naar de eerste afbeelding
+        currentSlide = 0; 
     }
 
-    updateCarousel(); // Update de carousel
+    updateCarousel(); 
 }
 
-// Functie om de carouselpositie bij te werken
 function updateCarousel() {
-    const carousel = document.querySelector('.carousel'); // Carousel-container
-    const slideWidth = slides[0].offsetWidth; // Breedte van de eerste afbeelding, gebruik hetzelfde voor alle afbeeldingen
+    const carousel = document.querySelector('.carousel'); 
+    const slideWidth = slides[0].offsetWidth; 
 
-    // Bereken de nieuwe verschuiving per afbeelding
-    carousel.style.transition = "transform 0.5s ease-in-out"; // Vloeiende overgang
-    carousel.style.transform = `translateX(-${currentSlide * slideWidth}px)`; // Beweeg de carousel naar de juiste slide
+   
+    carousel.style.transition = "transform 0.5s ease-in-out"; 
+    carousel.style.transform = `translateX(-${currentSlide * slideWidth}px)`; 
 }
 
-// Event listeners voor de navigatieknoppen
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
 
 if (prevButton && nextButton) {
     prevButton.addEventListener('click', () => moveSlide(-1));
     nextButton.addEventListener('click', () => moveSlide(1));
 }
 
-// Zorg ervoor dat de carousel goed werkt bij venstergrootte wijzigingen
+
 window.addEventListener('resize', updateCarousel);
 
-// Zorg ervoor dat de carousel goed werkt bij het laden van de pagina
+
 window.addEventListener('load', updateCarousel);
 
 
