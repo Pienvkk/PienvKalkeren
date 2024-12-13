@@ -149,7 +149,6 @@ nav.active ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh;
     background: radial-gradient(circle, #121212, #0d1117 70%);
     color: #ffffff;
     position: relative;
@@ -192,7 +191,7 @@ nav.active ul li a:hover {
 
 /* Over Mij Sectie */
 .home section:nth-of-type(2) {
-    padding: 4rem 2rem;
+    padding: 1rem 1rem;
     background: #0d1117;
     text-align: left;
 }
