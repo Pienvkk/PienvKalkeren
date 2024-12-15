@@ -773,6 +773,17 @@ footer p {
     color: #bb86fc;
 }
 
+@media screen and (max-width: 768px) { /* Tablet en kleiner */
+    .vaardigheden-content article ul li {
+        font-size: 18px; /* kleinere tekst voor telefoons */
+    }
+}
+
+@media screen and (max-width: 480px) { /* Specifiek voor smartphones */
+    .vaardigheden-content article ul li {
+        font-size: 14px; /* nog kleiner voor heel kleine schermen */
+    }
+}
 /* Animatie voor de lijstitems */
 .vaardigheden-content article ul li::before {
     content: "";
