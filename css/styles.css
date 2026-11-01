@@ -1394,4 +1394,40 @@ button.next {
     button.prev, button.next {
         font-size: 1.5em; /* Verklein de knoppen voor mobiele apparaten */
     }
+
+    /* Specifieke styling voor de Plasticsoup pagina */
+.plasticsoup.hero {
+    padding: 20px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.plasticsoup.hero-text img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.plasticsoup.mobiel-carousel-container {
+    max-width: 950px;
+    margin: 40px auto;
+}
+.plasticsoup.mobiel-carousel .carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    align-items: center;
+}
+
+.plasticsoup.mobiel-carousel .carousel img {
+    flex: 0 0 auto;
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    scroll-snap-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
